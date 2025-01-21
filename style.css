@@ -1,0 +1,42 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 50px;
+    background-color: #f0f0f0; /* Fond gris clair */
+    color: black; /* Texte en noir pour contraste */
+}
+#combatLog {
+    white-space: pre-wrap;
+    font-family: monospace;
+    margin-top: 20px;
+    border: 1px solid #000;
+    padding: 10px;
+    height: 300px;
+    overflow-y: auto;
+    width: 70%; /* Largeur ajustée à 70% de la fenêtre */
+    margin-left: auto; /* Centrer le cadre horizontalement */
+    margin-right: auto; /* Centrer le cadre horizontalement */
+    background-color: rgba(255, 255, 255, 0.8); /* Fond légèrement transparent */
+    border-radius: 10px; /* Bords arrondis */
+}
+/* Ajouter une marge au bouton pour le déplacer un peu plus bas */
+button {
+    margin-top: 30px; /* Ajuste la valeur de la marge ici */
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #76b852;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #5c9e44;
+}
+/* Texte "Let Start" avec la même police que le log */
+#startMessage {
+    font-family: monospace;
+    font-size: 18px;
+    color: black;
+    margin-bottom: 20px; /* Ajoute un peu d'espace entre le texte et le bouton */
+}
