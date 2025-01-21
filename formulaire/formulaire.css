@@ -1,0 +1,200 @@
+/* Style général */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding-top: 20px;
+  transition: background-color 0.3s ease; /* Transition douce du fond */
+}
+
+/* Importation de la police Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+/* Conteneur du formulaire */
+#form-container {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  width: 400px;
+  transition: box-shadow 0.3s ease; /* Transition douce pour les ombres */
+}
+
+/* Effet au survol du formulaire */
+#form-container:hover {
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Ombre plus prononcée au survol */
+}
+
+/* Titre */
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 30px;
+  font-family: 'Poppins', sans-serif; /* Nouvelle police */
+  color: #333; /* Couleur de texte inchangée */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative; /* Pour la ligne animée sous le texte */
+  padding-bottom: 10px; /* Pour espacer le texte de la ligne */
+  transition: color 0.3s ease; /* Transition pour la couleur du titre */
+}
+
+/* Soulignement animé du h1 */
+h1::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #007bff; /* Couleur de la ligne */
+  transform: scaleX(0); /* Initialement invisible */
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out; /* Effet de la ligne au survol */
+}
+
+/* Effet au survol du titre */
+h1:hover {
+  color: #007bff; /* Changer la couleur du texte au survol */
+}
+
+h1:hover::after {
+  transform: scaleX(1); /* Faire apparaître la ligne sous le texte */
+  transform-origin: bottom left;
+}
+
+/* Styles des champs */
+form label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #333; /* Couleur du texte des labels inchangée (noir) */
+}
+
+form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  color: #333; /* Couleur du texte des champs inchangée (noir) */
+  transition: all 0.3s ease; /* Transition douce pour les bordures et les ombres */
+}
+
+form input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0px 0px 5px rgba(0, 123, 255, 0.5); /* Ombre autour du champ */
+}
+
+form input:focus ~ label {
+  color: #333; /* Garder la couleur du label en noir au focus */
+}
+
+/* Checkbox style */
+.checkbox-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+  transition: transform 0.3s ease; /* Légère animation pour le groupe de checkboxes */
+}
+
+.checkbox-container:hover {
+  transform: scale(1.05); /* Légère mise en valeur du groupe au survol */
+}
+
+.checkbox-container input[type="checkbox"] {
+  margin-right: 10px;
+  width: 20px;
+  height: 20px;
+  transition: transform 0.2s ease; /* Animation pour la checkbox */
+}
+
+.checkbox-container input[type="checkbox"]:checked {
+  transform: scale(1.2); /* Agrandissement au survol */
+}
+
+.checkbox-container label {
+  font-size: 14px;
+  color: #333; /* Garder le texte "I am not a robot" en noir */
+  margin-left: 5px;
+  transition: color 0.3s ease; /* Transition douce pour la couleur */
+}
+
+/* Bouton */
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Transition du bouton */
+}
+
+button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px); /* Légère remontée au survol */
+}
+
+button:active {
+  transform: translateY(0); /* Revenir à la position originale lors du clic */
+}
+
+/* Messages */
+#messages {
+  margin-top: 20px;
+}
+
+.message-box {
+  padding: 15px;
+  border-radius: 5px;
+  font-size: 14px;
+  line-height: 1.5;
+  opacity: 0;
+  transform: translateY(10px); /* Faire apparaître le message avec un léger mouvement */
+  animation: fadeInUp 0.4s forwards; /* Animation d'apparition */
+}
+
+.message-box.success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.message-box.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+.message-box ul {
+  list-style-position: inside;
+  margin: 0;
+  padding: 0;
+}
+
+.message-box ul li {
+  margin-bottom: 5px;
+}
+
+/* Animation pour faire apparaître les messages */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

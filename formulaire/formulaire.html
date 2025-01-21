@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulaire Validation</title>
+  <link rel="stylesheet" href="formulaire.css">
+</head>
+<body>
+  <div id="form-container">
+    <h1>Formulaire de validation</h1>
+    <form id="form">
+      <label for="pseudo">Pseudo :</label>
+      <input type="text" id="pseudo" placeholder="Entrez votre pseudo">
+      
+      <label for="email">Email :</label>
+      <input type="email" id="email" placeholder="votreemail@gmail.com">
+      
+      <label for="password">Mot de passe :</label>
+      <input type="password" id="password" placeholder="8 caractères minimum">
+      
+      <label for="confirmPassword">Vérification mot de passe :</label>
+      <input type="password" id="confirmPassword" placeholder="Confirmez votre mot de passe">
+      
+      <!-- Checkbox avec texte juste après -->
+      <div class="checkbox-container">
+        <input type="checkbox" id="notRobot" name="notRobot">
+        <label for="notRobot">I am not a robot</label>
+      </div>
+      
+      <button type="button" id="submit">Envoyer</button>
+    </form>
+    <div id="messages"></div>
+  </div>
+  <script src="formulairee.js"></script>
+</body>
+</html>
